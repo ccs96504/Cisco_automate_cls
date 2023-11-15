@@ -1,0 +1,6 @@
+importlib-metadata==4.13.0
+mypy-extensions==1.0.0
+nornir==3.4.1
+ruamel.yaml==0.18.5
+ruamel.yaml.clib==0.2.8
+zipp==3.17.0
