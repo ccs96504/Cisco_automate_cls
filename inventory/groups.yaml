@@ -1,0 +1,6 @@
+# groups.yaml
+---
+iosxr:
+    platform: 'iosxr'
+ios:
+    platform: 'ios'
