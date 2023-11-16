@@ -258,3 +258,133 @@ Device settings: cisco_xr 171.190.10.64:22
 
 
 
+2023-11-16 09:19:35,167 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 2 hosts
+2023-11-16 09:19:45,250 - nornir.core.task -    ERROR -      start() - Host 'rt2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\netmiko\base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\paramiko\client.py", line 386, in connect
+    sock.connect(addr)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\napalm\base\base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\netmiko\base_connection.py", line 462, in __init__
+    self._open()
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\netmiko\base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\netmiko\base_connection.py", line 1126, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.11.170:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\napalm\ios\ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\napalm\base\base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.11.170
+
+2023-11-16 09:19:45,250 - nornir.core.task -    ERROR -      start() - Host 'rt1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\netmiko\base_connection.py", line 1104, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\paramiko\client.py", line 386, in connect
+    sock.connect(addr)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\napalm\pyIOSXR\iosxr.py", line 186, in open
+    self.device = ConnectHandler(
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\netmiko\ssh_dispatcher.py", line 388, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\netmiko\base_connection.py", line 462, in __init__
+    self._open()
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\netmiko\base_connection.py", line 467, in _open
+    self.establish_connection()
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\netmiko\cisco\cisco_xr.py", line 11, in establish_connection
+    super().establish_connection(width=width, height=height)
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\netmiko\base_connection.py", line 1126, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_xr 171.190.10.64:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\napalm\iosxr\iosxr.py", line 79, in open
+    self.device.open()
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\napalm\pyIOSXR\iosxr.py", line 199, in open
+    raise ConnectError(t_err.args[0])
+napalm.pyIOSXR.exceptions.ConnectError: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_xr 171.190.10.64:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\nornir\core\task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\nornir\core\inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\nornir\core\inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "d:\12.github\cisco_automate_cls\nornir_venv\lib\site-packages\napalm\iosxr\iosxr.py", line 82, in open
+    raise ConnectionException(conn_err.args[0])
+napalm.base.exceptions.ConnectionException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_xr 171.190.10.64:22
+
+
+
